@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <div>
+        <h1>Contador <span id="zero">0</span></h1>
+        <p id="resultado">0</p>
+        <button id="menos" class="botao" onclick="menos()">-1</button>
+        <button id="reset" onclick="reset()">Reset</button>
+        <button id="mais" class="botao" onclick="mais()">+1</button>
+    </div>
+    <script>
+        let numero = 0
+
+        function menos() {
+            numero -= 1
+            render()
+        }
+        function mais() {
+            numero += 1
+            render()
+        }
+        function reset() {
+            numero = 0
+            render()
+        }
+        function render() {
+            const p = document.querySelector("#resultado")
+            p.innerText = numero
+
+            const zero = document.querySelector("#zero")
+            zero.innerText = numero
+        }
+    </script>
+</body>
+
+</html>
